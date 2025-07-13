@@ -1,0 +1,38 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+</head>
+
+<body>
+<p><li>설명</li></p>    
+속성값 pattern 안에는 html이 아니라 정규표현식이라는 다른 프로그래밍 언어가 들어가는구나만 일단 알면됨. 
+정규표현식 끝에 .을 찍으면 이거는 어떤 문자든 상관없다는 의미이다. 
+<p><li>정규표현식</li></p>
+<p>[a-zA-Z].을 하면 첫번째는 알파벳으로 써야하지만 나머지는 상관없다. </p>
+<p>[a-zA-Z].  : a1가능, a김 가능, a123불가능(점이 하나만 있어서!)</p>
+<p>[a-zA-Z][a-zA-Z] : Aa가능, A1불가능, Aaaa불가능(2개만 가능)</p>
+<p>[a-zA-Z][a-zA-Z]. : Aa1 가능, Aaa가능, A1a불가능, Aaaaa불가능.</p>
+<p>[a-zA-Z].+ : 모든 문자가 한개이상 뒤에 온다. a1가능, a111가능 </p>
+<p>[a-zA-Z].+[0-9] : 끝에가 무조건 숫자로 끝나야한다. a11 가능, A1a불가능</p>
+
+
+ 
+    <form action="register.php" autocomplete="on" method="post">
+        <p><input type="text" name="id" placeholder="id를 입력해주세요" autofocus required pattern="[a-zA-Z][a-zA-Z]." ></p>
+        <p><input type="email" name="email" placeholder="email를 입력해주세요" ></p>
+
+        <input type="submit">
+
+
+    </form>
+
+
+</body>
+
+</html>
